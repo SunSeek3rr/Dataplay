@@ -1,0 +1,159 @@
+{
+    "rock": {
+        "imagine-dragons": {
+            "albums-sell": 74000000,
+            "streams-total": 34400000000,
+            "certifications": {
+                "total": 45,
+                "gold": 17,
+                "platinum": 30
+            },
+            "prizes": 57,
+            "music-time-total": 893,
+            "album-total": 10
+        },
+        "linkin-park": {
+            "albums-sell": 60002599,
+            "streams-total": 3000000000,
+            "certifications": {
+                "total": 34,
+                "gold": 7,
+                "platinum": 26,
+                "diamond": 1
+            },
+            "prizes": 69,
+            "music-time-total": 1894,
+            "album-total": 22
+        },
+        "queen": {
+            "albums-sell": 300000000,
+            "streams-total": 24942047493,
+            "certifications": {
+                "total": 70,
+                "gold": 25,
+                "platinum": 44,
+                "diamond": 1
+            },
+            "prizes": 8,
+            "music-time-total": 3225,
+            "album-total": 30
+        },
+        "acdc": {
+            "albums-sell": 132029944,
+            "streams-total": 13600000000,
+            "certifications": {
+                "total": 40,
+                "gold": 6,
+                "platinum": 32,
+                "diamond": 2
+            },
+            "prizes": 17,
+            "music-time-total": 1089,
+            "album-total": 20
+        },
+        "nirvana": {
+            "albums-sell": 75000000,
+            "streams-total": 12706028804,
+            "certifications": {
+                "total": 24,
+                "gold": 5,
+                "platinum": 18,
+                "diamond": 1
+            },
+            "prizes": 17,
+            "music-time-total": 1967,
+            "album-total": 17
+        },
+        "the-killers": {
+            "albums-sell": 30000000,
+            "streams-total": 8732015922,
+            "certifications": {
+                "total": 16,
+                "gold": 4,
+                "platinum": 11,
+                "diamond": 1
+            },
+            "prizes": 29,
+            "music-time-total": 677,
+            "album-total": 10
+        }
+    },
+    "rap-us": {
+        "kendrick-lamar": {
+            "albums-sell": 10200633,
+            "streams-total": 43901598696,
+            "certifications": {
+                "total": 33,
+                "gold": 14,
+                "platinum": 19
+            },
+            "prizes": 209,
+            "music-time-total": 674,
+            "album-total": 8
+        },
+        "kanye-west": {
+            "albums-sell": 39146884,
+            "streams-total": 52487298913,
+            "certifications": {
+                "total": 148,
+                "gold": 47,
+                "platinum": 99,
+                "diamond": 2
+            },
+            "prizes": 273,
+            "music-time-total": 1002,
+            "album-total": 15
+        },
+        "drake": {
+            "albums-sell": 42173178,
+            "streams-total": 109533474986,
+            "certifications": {
+                "total": 90,
+                "gold": 2,
+                "platinum": 85,
+                "diamond": 3
+            },
+            "prizes": 196,
+            "music-time-total": 1307,
+            "album-total": 18
+        },
+        "tyler-the-creator": {
+            "albums-sell": 7000000,
+            "streams-total": 20278213149,
+            "certifications": {
+                "total": 47,
+                "gold": 25,
+                "platinum": 22
+            },
+            "prizes": 17,
+            "music-time-total": 784,
+            "album-total": 11
+        },
+        "eminem": {
+            "albums-sell": 220000000,
+            "streams-total": 54762505822,
+            "certifications": {
+                "total": 108,
+                "gold": 34,
+                "platinum": 72,
+                "diamond": 2
+            },
+            "prizes": 149,
+            "music-time-total": 1859,
+            "album-total": 12
+        },
+        "travis-scott": {
+            "albums-sell": 28766000,
+            "streams-total": 53943725965,
+            "certifications": {
+                "total": 75,
+                "gold": 22,
+                "platinum": 51,
+                "diamond": 2
+            },
+            "prizes": 11,
+            "music-time-total": 372,
+            "album-total": 7
+        }
+    }
+}
