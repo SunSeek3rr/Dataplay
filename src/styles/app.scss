@@ -1,2 +1,141 @@
 @import 'utils/variables';
 @import 'components/type';
+<<<<<<< Updated upstream
+=======
+
+/*.artist{
+    border: 1px solid black;
+    width: 350px;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    p{
+        font-size: 18px;
+        transition: all 0.3s ease-in;
+    }
+}*/
+$background-color: #121212;
+$text-color: #ececec;
+$winner-text-color: #e94d4d;
+$h1-font: "Playfaire Display", serif;
+$title-font: "IBM Plex Mono", monospace;
+$bodytext-font: "DM Sans", sans-serif;
+
+body,h1,h2,h3,p,img{
+    margin: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding: 0;
+    padding-inline-start: 0;
+    padding-inline-end: 0;
+    padding-block-start: 0;
+    padding-block-end: 0;
+}
+
+body{
+    background-color: $background-color;
+    font-family: $bodytext-font;
+    color: $text-color;
+}
+/*
+.header{
+    display: flex;
+    align-items: center;
+    padding: 0px 0px 0px 20px;
+    width: fit-content;
+    & svg{
+        width: 50px;
+    }
+}*/
+.main{
+    padding: 0px 0px 20px 20px;
+}
+
+.section--hero{
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+    text-transform: uppercase;
+    & svg{
+        width: 50px;
+        align-self: flex-start;
+        margin-right: auto;
+        position: absolute;
+        top: 6px;
+        left: 20px;
+    }
+    & .section__div--text{
+        order: 2;
+        .div__h1{
+            font-family: $h1-font;
+            font-size: clamp(2.375rem, 0.24rem + 9.108vi, 8.438rem);
+            font-weight: 400;
+            line-height: 120%;
+            margin-bottom: 14%;
+            & .h1__em{
+                font-weight: 700;
+            }  
+        }
+        & .div__h2{
+            font-family: $title-font;
+            font-size: clamp(1.313rem, 1.07rem + 1.033vi, 2rem);
+            margin-bottom: 25px;
+        }
+        & .div__p{
+            padding-right: 20px;
+            font-size: clamp(1rem, 0.956rem + 0.188vi, 1.125rem);
+            & .p__em:nth-of-type(1), .p__em:nth-of-type(3){
+                font-weight: 700;
+            }
+            & .p__em:nth-of-type(2){
+                font-weight: 200;
+                font-style: normal;
+            }
+        }
+    }
+    
+    & .section__div{
+        display: flex;
+        flex-direction: row-reverse;
+        width: 100%;
+        height: clamp(21.875rem, 11.884rem + 42.629dvw, 50.25rem);
+        order: 1;
+        margin-bottom: clamp(0.813rem, -17.287rem + 43.417vh, 10.5rem);
+        & .div__div--img{
+            overflow: hidden;
+            width: 50%;
+            height: 100%;
+        }
+        & img{
+            //width: 100%;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: 75% 75%;
+            overflow: hidden;
+        }
+        & .div__div{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            & .div__p{
+                font-family: $title-font;
+                font-size: 7px;
+                font-weight: 600;
+                writing-mode: vertical-lr;
+                rotate: 180deg;
+                width: 100%;
+                margin-right: 4px;
+                &:first-of-type{
+                    margin-top: 36px;
+                }
+            }
+        } 
+    }
+}
+
+>>>>>>> Stashed changes
