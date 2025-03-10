@@ -43,6 +43,9 @@ mix
         'src/scripts',
         'node_modules'
       ]
+    },
+    stats: {
+      children :true
     }
   })
   .disableSuccessNotifications();

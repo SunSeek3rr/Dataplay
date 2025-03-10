@@ -1,29 +1,15 @@
 @import 'utils/variables';
 @import 'components/type';
-<<<<<<< Updated upstream
-=======
 
-/*.artist{
-    border: 1px solid black;
-    width: 350px;
-    height: max-content;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    opacity: 0;
-    p{
-        font-size: 18px;
-        transition: all 0.3s ease-in;
-    }
-}*/
 $background-color: #121212;
 $text-color: #ececec;
+$grey-color-text: #444444;
 $winner-text-color: #e94d4d;
-$h1-font: "Playfaire Display", serif;
+$h1-font: "Playfair Display", serif;
 $title-font: "IBM Plex Mono", monospace;
 $bodytext-font: "DM Sans", sans-serif;
 
-body,h1,h2,h3,p,img{
+body,h1,h2,h3,p,img, button, ul, li{
     margin: 0;
     margin-block-start: 0;
     margin-block-end: 0;
@@ -40,6 +26,10 @@ body{
     background-color: $background-color;
     font-family: $bodytext-font;
     color: $text-color;
+    font-size: clamp(1rem, 0.956rem + 0.188vi, 1.125rem);
+}
+h1,h2,h3,h4{
+    text-transform: uppercase;
 }
 /*
 .header{
@@ -51,15 +41,60 @@ body{
         width: 50px;
     }
 }*/
-.main{
-    padding: 0px 0px 20px 20px;
+.div__p{
+    padding-right: 20px;
 }
-
+.main{
+    overflow-x: hidden;
+    & .main__div{
+        display: flex;
+        overflow: hidden;
+        & ul{
+            list-style: none;
+            flex-shrink: 0;
+            min-width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            & li{
+                list-style: none;
+                font-family: $title-font;
+                font-size: clamp(1.75rem, 1.42rem + 1.408vw, 2.688rem);
+                font-weight: 700;
+                text-transform: uppercase; 
+            }
+        }
+        & .div__ul{
+            width: 100%;
+            min-width: none;
+            & li{
+                font-size: clamp(1.25rem, 0.018rem + 5.258vw, 4.75rem);
+                color: $grey-color-text;
+            }
+        }
+        & .div__span{
+            display: block;
+            & em{
+                font-style: normal;
+                color: $grey-color-text;
+            }
+        }
+        & .div__span:nth-of-type(1){
+            transform: translateX(-90px);
+        }
+        & .div__span:nth-of-type(2){
+            transform: translateX(-350px);
+        }
+        & .div__span:nth-of-type(3){
+            transform: translateX(-50px);
+        }
+    }
+}
 .section--hero{
     display: flex;
     flex-direction: column;
-    height: 100dvh;
-    text-transform: uppercase;
+    height: 99vh;
+    padding: 0px 0px 20px 20px;
     & svg{
         width: 50px;
         align-self: flex-start;
@@ -70,12 +105,12 @@ body{
     }
     & .section__div--text{
         order: 2;
-        .div__h1{
+        & .div__h1{
             font-family: $h1-font;
             font-size: clamp(2.375rem, 0.24rem + 9.108vi, 8.438rem);
             font-weight: 400;
             line-height: 120%;
-            margin-bottom: 14%;
+            margin-bottom: clamp(2.813rem, 0.106rem + 11.549vw, 10.5rem);
             & .h1__em{
                 font-weight: 700;
             }  
@@ -86,8 +121,7 @@ body{
             margin-bottom: 25px;
         }
         & .div__p{
-            padding-right: 20px;
-            font-size: clamp(1rem, 0.956rem + 0.188vi, 1.125rem);
+            text-transform: uppercase;
             & .p__em:nth-of-type(1), .p__em:nth-of-type(3){
                 font-weight: 700;
             }
@@ -102,7 +136,7 @@ body{
         display: flex;
         flex-direction: row-reverse;
         width: 100%;
-        height: clamp(21.875rem, 11.884rem + 42.629dvw, 50.25rem);
+        height: 53%;
         order: 1;
         margin-bottom: clamp(0.813rem, -17.287rem + 43.417vh, 10.5rem);
         & .div__div--img{
@@ -117,6 +151,7 @@ body{
             object-fit: cover;
             object-position: 75% 75%;
             overflow: hidden;
+            
         }
         & .div__div{
             display: flex;
@@ -130,6 +165,8 @@ body{
                 rotate: 180deg;
                 width: 100%;
                 margin-right: 4px;
+                padding: 0;
+                text-transform: uppercase;
                 &:first-of-type{
                     margin-top: 36px;
                 }
@@ -138,4 +175,91 @@ body{
     }
 }
 
->>>>>>> Stashed changes
+.section--concept, .section--interactive{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: clamp(5rem, 0.599rem + 18.779vw, 17.5rem);
+    margin-bottom: clamp(5.563rem, 5.056rem + 2.16vw, 7rem);
+    & .section__div--text{
+        width: 76%;
+        & .div__h2{
+            font-family: $title-font;
+            font-size: clamp(1.75rem, 1.42rem + 1.408vw, 2.688rem);
+            margin-bottom: clamp(2.313rem, 1.872rem + 1.878vw, 3.563rem);
+        }
+    }
+    .section__div--chooseGenre, .section__div--chooseFirstArtist, .section__div--chooseSecondArtist{
+        width: 100%;
+    }
+}
+.section--interactive{
+    height: 70vh;
+    & .section__div--text{
+        margin-bottom: clamp(4.188rem, -0.5rem + 20vw, 17.5rem);
+    }
+    & .section__div--chooseArtist{
+        display: none;
+        
+    }
+    & .section__div--chooseArtist, .section__div--chooseGenre{
+
+        &.visible, .visible{
+            display: block;
+            opacity: 0;
+            animation: visibleAnimation 0.7s ease-out forwards;
+            transition: visible 0.7s ease-out;
+        }
+        &.hidden, .hidden{
+            //transition: all 0.5s ease;
+            animation: hiddenAnimation 0.7s ease-out forwards;
+        }
+    }
+}
+.div__btn{
+    width: 100%;
+    text-align: start;
+    color: $text-color;
+    font-family: $title-font;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: clamp(2.375rem, 1.099rem + 5.446vw, 6rem);
+    border: 1px solid $text-color;
+    background-color: transparent;
+    position: relative;
+    padding: 4px 20px;
+    //box-sizing: border-box;
+    &::after{
+        content: attr(data-text);
+        width: fit-content;
+        position: absolute;
+        top: 2px;
+        right: 20px;
+        rotate: 180deg;
+        color: $grey-color-text;
+    }
+}
+
+
+
+@keyframes hiddenAnimation {
+    0%{
+        opacity: 1;
+    }
+    30%{
+        opacity: 0;
+        display: none;
+    }
+    100%{
+        display: none;
+    }
+}
+@keyframes visibleAnimation {
+    70%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
