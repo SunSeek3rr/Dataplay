@@ -92,28 +92,11 @@ function afficher(){
     }
     
 }
+let artistSelectedAll = [];
 function SelectCharacter(){
-    /*console.log(genres);
-    displayArtist.innerHTML ="";
-    displayArtist.style.opacity = "1";
-
-    let myH2 = document.createElement("h2");
-    myH2.innerText = genres['genre']['rock'].name;*/
+    
     let chooseArtistBtn = document.querySelectorAll(".div__btn--artist");
-    let artistSelectedAll = [];
-    /*for(let i = 0; i<chooseArtistBtn.length; i++){
-        chooseArtistBtn[i].addEventListener("click", ()=>{
-            if(firstArtistSelected === ""){
-                chooseArtistBtn[i].classList.add("hidden");
-                firstArtistSelected = chooseArtistBtn[i].value;
-                console.log(firstArtistSelected);
-            }else{
-                console.log(firstArtistSelected);
-                chooseArtistBtn[i].classList.add("hidden");
-                secondArtistSelected = chooseArtistBtn[i].value;
-            }
-            });
-        }*/
+    
         chooseArtistBtn.forEach(button =>{
             button.addEventListener("click", function(){
                 if(artistSelectedAll.length < 2 && !button.classList.contains("hidden")){
@@ -122,17 +105,36 @@ function SelectCharacter(){
 
                     if(artistSelectedAll.length === 2){
                         console.log("values in", artistSelectedAll);
-                        setInterval(function(){
-                            //artistContainer.classList.remove("visible");
-                            artistContainer.classList.add("hidden");
-                        }, 500);
                         chooseArtistBtn.forEach(btn =>{
                             btn.disabled = true;
                         });
+                        artistContainer.classList.add("hidden");
+                        displayResults();
                     }
                 }
             });
         });
+}
+
+                        
+function displayResults(){
+    let sectionResults = document.querySelector(".section--results");
+    let firstArtist = document.querySelector(".div__div--firstArtist");
+    let secondArtist = document.querySelector(".div__div--secondArtist");
+    sectionResults.classList.add("visible");
+    
+    for(let i = 0; i < artistSelectedAll.length; i++){
+        const myH2 = document.createElement("h2");
+        myH2.innerText = genres['genre'][`${genreSelected}`][`${artistSelectedAll[i]}`].name;
+        if(i<1){
+            firstArtist.appendChild(myH2);
+            firstArtist.style.backgroundImage = "url("+`${genres['genre'][`${genreSelected}`][`${artistSelectedAll[i]}`]['image-link']}`+")";
+        }else{
+            secondArtist.appendChild(myH2);
+            secondArtist.style.backgroundImage = "url("+`${genres['genre'][`${genreSelected}`][`${artistSelectedAll[i]}`]['image-link']}`+")";
+        }
+
+    }
 
 }
 

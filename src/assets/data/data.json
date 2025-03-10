@@ -10,7 +10,9 @@
                 "prizes": "57",
                 "music-time-total": "893",
                 "album-total": "10",
-                "spotifyLink": "https://open.spotify.com/intl-fr/artist/53XhwfbYqKCa1cC15pYq2q?si=aa20QdYtTFWcL4QZXARQXg"
+                "spotifyLink": "https://open.spotify.com/intl-fr/artist/53XhwfbYqKCa1cC15pYq2q?si=aa20QdYtTFWcL4QZXARQXg",
+                "image-link": "../assets/images/pfpImagine.jpg",
+                "image2x-link": "../assets/images/pfpImagine@2x.webp"
             },
             "linkinPark": {
                 "value": "linkinPark",
@@ -21,7 +23,9 @@
                 "prizes": "69",
                 "music-time-total": "1894",
                 "album-total": "22",
-                "spotifyLink": "https://open.spotify.com/intl-fr/artist/6XyY86QOPPrYVGvF9ch6wz?si=_ZxPxof0Rc6cErbJIwbuIQ"
+                "spotifyLink": "https://open.spotify.com/intl-fr/artist/6XyY86QOPPrYVGvF9ch6wz?si=_ZxPxof0Rc6cErbJIwbuIQ",
+                "image-link": "../assets/images/pfpLinkin.jpg",
+                "image2x-link": "../assets/images/pfpLinkin@2x.webp"
             },
             "queen": {
                 "value": "queen",
