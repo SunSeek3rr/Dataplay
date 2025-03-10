@@ -43,12 +43,10 @@ btnDrake.addEventListener("click", function(){
     function fetchData (){
         fetch("assets/data/data.json")
         .then(function(response){
-            console.log(response);
             return response.json();
         })
         .then(function(data){
             JSON.stringify(data);
-            console.log(data);
             genres = data;
             console.log("data fetched");
             //afficher(genres);
@@ -58,17 +56,16 @@ btnDrake.addEventListener("click", function(){
         });
     }
 function generateArtistsButtons(){
-/*Ici on doit faire en sorte que ça génère des boutons en fonction du genre, on cache le séléctionné via CSS*/
-    console.log(genres);
+
     artistContainer.innerHTML = "";
     for(var x in genres['genre'][`${genreSelected}`]){
         let artistBtn = document.createElement("button");
         artistBtn.setAttribute("data-text", genres['genre'][`${genreSelected}`][x].name);
         artistBtn.setAttribute("value", genres['genre'][`${genreSelected}`][x].value);
         artistBtn.innerText = genres['genre'][`${genreSelected}`][x].name;
-        artistBtn.classList.add("div__btn");
-        artistBtn.classList.add("div__btn--artist");
-        artistBtn.classList.add("artist");
+        artistBtn.classList.add("div__btn", "div__btn--artist", "artist");
+        //artistBtn.classList.add("div__btn--artist");
+        //artistBtn.classList.add("artist");
         artistContainer.appendChild(artistBtn);
     }
     selection = true;
@@ -76,22 +73,6 @@ function generateArtistsButtons(){
     SelectCharacter();
 }
 
-function afficher(){
-    console.log(genres);
-    displayArtist.innerHTML ="";
-    displayArtist.style.opacity = "1";
-    let myH2 = document.createElement("h2");
-    myH2.innerText = genres['genre'][`${genreSelected}`].name;
-    //Console.log(genres['genre']['rock'].name)
-    displayArtist.appendChild(myH2);
-    for (var x in genres['genre'][`${genreSelected}`][`${artistSelected}`]){
-        let p = document.createElement("p");
-        p.innerText = genres['genre'][`${genreSelected}`][`${artistSelected}`][x];
-        displayArtist.appendChild(p);
-        
-    }
-    
-}
 let artistSelectedAll = [];
 function SelectCharacter(){
     
@@ -109,7 +90,7 @@ function SelectCharacter(){
                             btn.disabled = true;
                         });
                         artistContainer.classList.add("hidden");
-                        displayResults();
+                        displayVersus();
                     }
                 }
             });
@@ -117,34 +98,231 @@ function SelectCharacter(){
 }
 
                         
-function displayResults(){
+function displayVersus(){
     let sectionResults = document.querySelector(".section--results");
     let firstArtist = document.querySelector(".div__div--firstArtist");
     let secondArtist = document.querySelector(".div__div--secondArtist");
     sectionResults.classList.add("visible");
     
     for(let i = 0; i < artistSelectedAll.length; i++){
-        const myH2 = document.createElement("h2");
-        myH2.innerText = genres['genre'][`${genreSelected}`][`${artistSelectedAll[i]}`].name;
+        console.log(i);
+        const H2 = document.createElement("h2");
+        H2.innerText = genres['genre'][`${genreSelected}`][`${artistSelectedAll[i]}`].name;
         if(i<1){
-            firstArtist.appendChild(myH2);
+            firstArtist.appendChild(H2);
             firstArtist.style.backgroundImage = "url("+`${genres['genre'][`${genreSelected}`][`${artistSelectedAll[i]}`]['image-link']}`+")";
         }else{
-            secondArtist.appendChild(myH2);
+            secondArtist.appendChild(H2);
             secondArtist.style.backgroundImage = "url("+`${genres['genre'][`${genreSelected}`][`${artistSelectedAll[i]}`]['image-link']}`+")";
         }
 
     }
+    statsAlbumCount();
+}
+function statsAlbumCount(){
+    let sectionResults = document.querySelector(".section--results");
+    const div = document.createElement("div");
+    div.classList.add("section__div--albumCount");
+    sectionResults.appendChild(div);
+    
+    for(let i = 0; i < artistSelectedAll.length; i++){
 
+        const divPContainer = document.createElement("div");
+        divPContainer.classList.add("div__div--container");
+        if(i<1){
+            div.appendChild(divPContainer);
+        }
+        
+        let divContainer = document.querySelector(".div__div--container");
+        
+        const span = document.createElement("span");
+        span.innerText = genres["genre"][`${genreSelected}`][`${artistSelectedAll[i]}`].name;
+        span.classList.add("p__span")
+        
+        const p = document.createElement("p");
+        p.innerText = " has created " + genres["genre"][`${genreSelected}`][`${artistSelectedAll[i]}`]["album-total"] + " albums";
+        p.classList.add("div__p")
+        p.insertBefore(span, p.firstChild);
+        divContainer.appendChild(p);
+
+    }
+    statsAlbumSold();
 }
 
+function statsAlbumSold(){
+    let sectionResults = document.querySelector(".section--results");
+    const div = document.createElement("div");
+    div.classList.add("section__div--albumSold");
+    sectionResults.appendChild(div);
+    
+    for(let i = 0; i < artistSelectedAll.length; i++){
 
+        const divPContainer = document.createElement("div");
+        divPContainer.classList.add("div__div--container");
+        if(i<1){
+            div.appendChild(divPContainer);
+        }
+        
+        let divContainer = document.querySelector(".div__div--container");
+        
+        const span = document.createElement("span");
+        span.innerText = genres["genre"][`${genreSelected}`][`${artistSelectedAll[i]}`].name;
+        span.classList.add("p__span")
+        
+        const p = document.createElement("p");
+        p.innerText = " has sold " + genres["genre"][`${genreSelected}`][`${artistSelectedAll[i]}`]["albums-sell"] + " albums";
+        p.classList.add("div__p")
+        p.insertBefore(span, p.firstChild);
+        divContainer.appendChild(p);
 
-/*Change querySelector(".btnDrake") par querySelectorAll(".btn");
--> btn.forEach((btn)){
- getValue;
+    }
+    statsNumberStreams();
 }
-*/
+
+function statsNumberStreams(){
+    let sectionResults = document.querySelector(".section--results");
+    const div = document.createElement("div");
+    div.classList.add("section__div--streamNumber");
+    sectionResults.appendChild(div);
+
+    for(let i = 0; i < artistSelectedAll.length; i++){
+
+        const divPContainer = document.createElement("div");
+        divPContainer.classList.add("div__div--container");
+        if(i<1){
+            div.appendChild(divPContainer);
+        }
+        
+        let divContainer = document.querySelector(".div__div--container");
+        
+        const span = document.createElement("span");
+        span.innerText = genres["genre"][`${genreSelected}`][`${artistSelectedAll[i]}`].name;
+        span.classList.add("p__span")
+        
+        const p = document.createElement("p");
+        p.innerText = " has generated over " + genres["genre"][`${genreSelected}`][`${artistSelectedAll[i]}`]["streams-total"] + " streams since he started";
+        p.classList.add("div__p")
+        p.insertBefore(span, p.firstChild);
+        divContainer.appendChild(p);
+
+    }
+    statsAwards();
+}
+function statsAwards(){
+    let sectionResults = document.querySelector(".section--results");
+    const div = document.createElement("div");
+    div.classList.add("section__div--awards");
+    sectionResults.appendChild(div);
+
+    for(let i = 0; i < artistSelectedAll.length; i++){
+
+        const divPContainer = document.createElement("div");
+        divPContainer.classList.add("div__div--container");
+        if(i<1){
+            div.appendChild(divPContainer);
+        }
+        
+        let divContainer = document.querySelector(".div__div--container");
+        
+        const span = document.createElement("span");
+        span.innerText = genres["genre"][`${genreSelected}`][`${artistSelectedAll[i]}`].name;
+        span.classList.add("p__span")
+        
+        const p = document.createElement("p");
+        p.innerText = " has received " + genres["genre"][`${genreSelected}`][`${artistSelectedAll[i]}`]["awards"] + " awards throughout his career";
+        p.classList.add("div__p")
+        p.insertBefore(span, p.firstChild);
+        divContainer.appendChild(p);
+
+    }
+    statsCertifications();
+}
+function statsCertifications(){
+    let sectionResults = document.querySelector(".section--results");
+    const div = document.createElement("div");
+    div.classList.add("section__div--certifications");
+    sectionResults.appendChild(div);
+    
+    for(let i = 0; i < artistSelectedAll.length; i++){
+
+        const divPContainer = document.createElement("div");
+        divPContainer.classList.add("div__div--container");
+        if(i<1){
+            div.appendChild(divPContainer);
+        }
+        
+        let divContainer = document.querySelector(".div__div--container");
+        
+        const span = document.createElement("span");
+        span.innerText = genres["genre"][`${genreSelected}`][`${artistSelectedAll[i]}`].name;
+        span.classList.add("p__span")
+        
+        const p = document.createElement("p");
+        p.innerText = " has received a total of " + genres["genre"][`${genreSelected}`][`${artistSelectedAll[i]}`]["certifications"] + " certifications " + genres["genre"][`${genreSelected}`][`${artistSelectedAll[i]}`]["certifications-split"];
+        p.classList.add("div__p")
+        p.insertBefore(span, p.firstChild);
+        divContainer.appendChild(p);
+
+    }
+    statsTotalTime();
+}
+
+function statsTotalTime(){
+    let sectionResults = document.querySelector(".section--results");
+    const div = document.createElement("div");
+    div.classList.add("section__div--totalTime");
+    sectionResults.appendChild(div);
+    
+    for(let i = 0; i < artistSelectedAll.length; i++){
+
+        const divPContainer = document.createElement("div");
+        divPContainer.classList.add("div__div--container");
+        if(i<1){
+            div.appendChild(divPContainer);
+        }
+        
+        let divContainer = document.querySelector(".div__div--container");
+        
+        const span = document.createElement("span");
+        span.innerText = genres["genre"][`${genreSelected}`][`${artistSelectedAll[i]}`].name;
+        span.classList.add("p__span")
+        
+        const p = document.createElement("p");
+        const pFirstText = document.createTextNode("If you add up every song from ");
+        const pSecondText = document.createTextNode(" albums, that would represent a total of ");
+        const pData = document.createTextNode(genres["genre"][`${genreSelected}`][`${artistSelectedAll[i]}`]["music-time-total"]);
+        const pThirdText = document.createTextNode(" minutes of listening time");
+        p.appendChild(pFirstText);
+        p.appendChild(span);
+        p.appendChild(pSecondText);
+        p.appendChild(pData);
+        p.appendChild(pThirdText)
+        p.classList.add("div__p")
+        divContainer.appendChild(p);
+
+    }
+    //displayWinner();
+}
+/*function displayWinner(){
+    let sectionResults = document.querySelector(".section--results");
+    let firstArtist = document.querySelector(".div__div--firstArtist");
+    let secondArtist = document.querySelector(".div__div--secondArtist");
+    sectionResults.classList.add("visible");
+    
+    for(let i = 0; i < artistSelectedAll.length; i++){
+        const H2 = document.createElement("h2");
+        H2.innerText = genres['genre'][`${genreSelected}`][`${artistSelectedAll[i]}`].name;
+        if(i<1){
+            firstArtist.appendChild(H2);
+            firstArtist.style.backgroundImage = "url("+`${genres['genre'][`${genreSelected}`][`${artistSelectedAll[i]}`]['image-link']}`+")";
+        }else{
+            secondArtist.appendChild(H2);
+            secondArtist.style.backgroundImage = "url("+`${genres['genre'][`${genreSelected}`][`${artistSelectedAll[i]}`]['image-link']}`+")";
+        }
+
+    }
+}*/
+
 window.addEventListener("DOMContentLoaded", ()=>{
     fetchData();
 });
