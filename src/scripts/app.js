@@ -17,7 +17,9 @@ let artistContainer = document.querySelector(".section__div--chooseArtist");
 let btnRock = document.querySelector(".div__btn--rock");
 let btnRapUS = document.querySelector(".div__btn--rapUs");
 let selection = false;
-
+let actualData = "";
+let firstData = 0;
+let secondData = 0;
 btnRock.addEventListener("click", function(){
     genreSelected = btnRock.value;
     genreContainer.classList.toggle("hidden");
@@ -122,31 +124,50 @@ function displayVersus(){
 function statsAlbumCount(){
     let sectionResults = document.querySelector(".section--results");
     const div = document.createElement("div");
-    div.classList.add("section__div--albumCount");
+    div.classList.add("section__div","section__div--albumCount");
     const H2 = document.createElement("h2");
     H2.innerText = "Albums count";
-    H2.classList.add("section__h2");
+    H2.classList.add("div__h2");
     div.appendChild(H2);
     sectionResults.appendChild(div);
+    const divPContainer = document.createElement("div");
+    divPContainer.classList.add("div__div--container");
     for(let i = 0; i < artistSelectedAll.length; i++){
-        
-        const divPContainer = document.createElement("div");
-        divPContainer.classList.add("div__div--container");
+        actualData = genres["genre"][`${genreSelected}`][`${artistSelectedAll[i]}`]["album-total"];
+        const img = document.createElement("img");
+        img.classList.add("figure__img");
         if(i<1){
             div.appendChild(divPContainer);
+            firstData = Number(actualData);
         }
-
-        let divContainer = document.querySelector(".section__div--albumCount .div__div--container");
-        
+        secondData = Number(actualData);
+        if(i<1){
+            if (firstData > secondData){
+                img.setAttribute("src", "assets/images/AlbumCount-disk-winner");
+            }else{
+                img.setAttribute("src", "assets/images/AlbumCount-disk-loser");
+            }
+        }else if(i = 1){
+            if (secondData > firstData){
+                img.setAttribute("src", "assets/images/AlbumCount-disk-winner");
+            }else{
+                img.setAttribute("src", "assets/images/AlbumCount-disk-loser");
+            }
+        }
+        const figure = document.createElement("figure");
+        figure.classList.add("div__figure");
+        divPContainer.appendChild(figure);
+        figure.appendChild(img);
         const span = document.createElement("span");
         span.innerText = genres["genre"][`${genreSelected}`][`${artistSelectedAll[i]}`].name;
         span.classList.add("p__span");
         
         const p = document.createElement("p");
         p.innerText = " has created " + genres["genre"][`${genreSelected}`][`${artistSelectedAll[i]}`]["album-total"] + " albums";
-        p.classList.add("div__p");
+        p.classList.add("figure__p");
         p.insertBefore(span, p.firstChild);
-        divContainer.appendChild(p);
+        figure.appendChild(p);
+        
         
     }
     scoreTracker();
@@ -156,19 +177,45 @@ function statsAlbumCount(){
 function statsAlbumSold(){
     let sectionResults = document.querySelector(".section--results");
     const div = document.createElement("div");
-    div.classList.add("section__div--albumSold");
+    div.classList.add("section__div","section__div--albumSold");
     const H2 = document.createElement("h2");
     H2.innerText = "Albums sold";
-    H2.classList.add("section__h2");
+    H2.classList.add("div__h2");
     div.appendChild(H2);
     sectionResults.appendChild(div);
     
     for(let i = 0; i < artistSelectedAll.length; i++){
-        
+        actualData = genres["genre"][`${genreSelected}`][`${artistSelectedAll[i]}`]["albums-sell"];
+        actualData = actualData.replaceAll(/,/g, "");
         const divPContainer = document.createElement("div");
         divPContainer.classList.add("div__div--container");
         if(i<1){
+            const dataVisContainer = document.createElement("div");
+            const firstDataDiv = document.createElement("div");
+            const secondDataDiv = document.createElement("div");
+            dataVisContainer.classList.add("div__div--dataVis");
+            firstDataDiv.classList.add("div__div--firstDataDiv");
+            secondDataDiv.classList.add("div__div--secondDataDiv");
+            dataVisContainer.appendChild(firstDataDiv);
+            dataVisContainer.appendChild(secondDataDiv);
+            div.appendChild(dataVisContainer);
             div.appendChild(divPContainer);
+            firstData = Number(actualData);
+        }
+        let firstDataClass = document.querySelector(".div__div--firstDataDiv");
+        let secondDataClass = document.querySelector(".div__div--secondDataDiv");
+        secondData = Number(actualData);
+        firstDataClass.style.width = (firstData / (firstData + secondData))*100 + "%";
+        secondDataClass.style.width = (secondData / (firstData + secondData))*100 + "%";
+        if (firstData > secondData){
+            firstDataClass.style.backgroundColor = "#e94d4d"
+        }else{
+            firstDataClass.style.backgroundColor = "#ececec"
+        }
+        if (secondData > firstData){
+            secondDataClass.style.backgroundColor = "#e94d4d"
+        }else{
+            secondDataClass.style.backgroundColor = "#ececec"
         }
 
         let divContainer = document.querySelector(".section__div--albumSold .div__div--container");
@@ -178,7 +225,7 @@ function statsAlbumSold(){
         span.classList.add("p__span");
         
         const p = document.createElement("p");
-        p.innerText = " has sold " + genres["genre"][`${genreSelected}`][`${artistSelectedAll[i]}`]["albums-sell"] + " albums";
+        p.innerText = " has sold " + genres["genre"][`${genreSelected}`][`${artistSelectedAll[i]}`]["albums-sell"] + " albums (value as of 28/02/25)";
         p.classList.add("div__p");
         p.insertBefore(span, p.firstChild);
         divContainer.appendChild(p);
@@ -191,33 +238,55 @@ function statsAlbumSold(){
 function statsNumberStreams(){
     let sectionResults = document.querySelector(".section--results");
     const div = document.createElement("div");
-    div.classList.add("section__div--streamNumber");
+    div.classList.add("section__div","section__div--streamNumber");
     const H2 = document.createElement("h2");
     H2.innerText = "Number of streams";
-    H2.classList.add("section__h2");
+    H2.classList.add("div__h2");
     div.appendChild(H2);
     sectionResults.appendChild(div);
     
     for(let i = 0; i < artistSelectedAll.length; i++){
-        
+        actualData = genres["genre"][`${genreSelected}`][`${artistSelectedAll[i]}`]["streams-total"];
+        actualData = actualData.replaceAll(/,/g, "");
         const divPContainer = document.createElement("div");
         divPContainer.classList.add("div__div--container");
         if(i<1){
             div.appendChild(divPContainer);
+            firstData = Number(actualData);
         }
-
+        secondData = Number(actualData);
         let divContainer = document.querySelector(".section__div--streamNumber .div__div--container");
-        
+        const pDataVis = document.createElement("p");
+        pDataVis.innerText = genres["genre"][`${genreSelected}`][`${artistSelectedAll[i]}`]["streams-dataVis"];
+        pDataVis.classList.add("div__p");
+        if(i < 1){
+            pDataVis.classList.add("div__p--firstDataVis");
+        }else{
+            pDataVis.classList.add("div__p--secondDataVis");
+        }
+        divContainer.appendChild(pDataVis);
         const span = document.createElement("span");
         span.innerText = genres["genre"][`${genreSelected}`][`${artistSelectedAll[i]}`].name;
         span.classList.add("p__span");
         
         const p = document.createElement("p");
-        p.innerText = " has generated over " + genres["genre"][`${genreSelected}`][`${artistSelectedAll[i]}`]["streams-total"] + " streams since he started";
+        p.innerText = " has generated over " + genres["genre"][`${genreSelected}`][`${artistSelectedAll[i]}`]["streams-round"] + " streams since he started";
         p.classList.add("div__p")
         p.insertBefore(span, p.firstChild);
         divContainer.appendChild(p);
-
+        
+    }
+    let firstDataClass = document.querySelector(".div__p--firstDataVis");
+    let secondDataClass = document.querySelector(".div__p--secondDataVis");
+    if (firstData > secondData){
+        firstDataClass.style.color = "#e94d4d"
+    }else{
+        firstDataClass.style.color = "#ececec"
+    }
+    if (secondData > firstData){
+        secondDataClass.style.color = "#e94d4d"
+    }else{
+        secondDataClass.style.color = "#ececec"
     }
     scoreTracker();
     statsAwards();
@@ -225,21 +294,22 @@ function statsNumberStreams(){
 function statsAwards(){
     let sectionResults = document.querySelector(".section--results");
     const div = document.createElement("div");
-    div.classList.add("section__div--awards");
+    div.classList.add("section__div","section__div--awards");
     const H2 = document.createElement("h2");
     H2.innerText = "Awards";
-    H2.classList.add("section__h2");
+    H2.classList.add("div__h2");
     div.appendChild(H2);
     sectionResults.appendChild(div);
     
     for(let i = 0; i < artistSelectedAll.length; i++){
-        
+        actualData = genres["genre"][`${genreSelected}`][`${artistSelectedAll[i]}`]["awards"];
         const divPContainer = document.createElement("div");
         divPContainer.classList.add("div__div--container");
         if(i<1){
             div.appendChild(divPContainer);
+            firstData = Number(actualData);
         }
-
+        secondData = Number(actualData);
         let divContainer = document.querySelector(".section__div--awards .div__div--container");
         
         const span = document.createElement("span");
@@ -259,21 +329,22 @@ function statsAwards(){
 function statsCertifications(){
     let sectionResults = document.querySelector(".section--results");
     const div = document.createElement("div");
-    div.classList.add("section__div--certifications");
+    div.classList.add("section__div","section__div--certifications");
     const H2 = document.createElement("h2");
     H2.innerText = "Certifications";
-    H2.classList.add("section__h2");
+    H2.classList.add("div__h2");
     div.appendChild(H2);
     sectionResults.appendChild(div);
     
     for(let i = 0; i < artistSelectedAll.length; i++){
-        
+        actualData = genres["genre"][`${genreSelected}`][`${artistSelectedAll[i]}`]["certifications"];
         const divPContainer = document.createElement("div");
         divPContainer.classList.add("div__div--container");
         if(i<1){
             div.appendChild(divPContainer);
+            firstData = Number(actualData);
         }
-
+        secondData = Number(actualData);
         let divContainer = document.querySelector(".section__div--certifications .div__div--container");
         
         const span = document.createElement("span");
@@ -294,21 +365,22 @@ function statsCertifications(){
 function statsTotalTime(){
     let sectionResults = document.querySelector(".section--results");
     const div = document.createElement("div");
-    div.classList.add("section__div--totalTime");
+    div.classList.add("section__div","section__div--totalTime");
     const H2 = document.createElement("h2");
     H2.innerText = "Total music time";
-    H2.classList.add("section__h2");
+    H2.classList.add("div__h2");
     div.appendChild(H2);
     sectionResults.appendChild(div);
     
     for(let i = 0; i < artistSelectedAll.length; i++){
-        
+        actualData = genres["genre"][`${genreSelected}`][`${artistSelectedAll[i]}`]["music-time-total"];
         const divPContainer = document.createElement("div");
         divPContainer.classList.add("div__div--container");
         if(i<1){
             div.appendChild(divPContainer);
+            firstData = Number(actualData);
         }
-
+        secondData = Number(actualData);
         let divContainer = document.querySelector(".section__div--totalTime .div__div--container");
         
         const span = document.createElement("span");
@@ -318,7 +390,7 @@ function statsTotalTime(){
         const p = document.createElement("p");
         const pFirstText = document.createTextNode("If you add up every song from ");
         const pSecondText = document.createTextNode(" albums, that would represent a total of ");
-        const pData = document.createTextNode(genres["genre"][`${genreSelected}`][`${artistSelectedAll[i]}`]["music-time-total"]);
+        let pData = document.createTextNode(genres["genre"][`${genreSelected}`][`${artistSelectedAll[i]}`]["music-time-total"]);
         const pThirdText = document.createTextNode(" minutes of listening time");
         p.appendChild(pFirstText);
         p.appendChild(span);
@@ -335,20 +407,20 @@ function statsTotalTime(){
 let firstScore = 0;
 let secondScore = 0;
 function scoreTracker(){
-    for(let i = 0; i < artistSelectedAll.length; i++){
-        if(i<1){
-            let firstStat = number(firstData);
-        }else{
-            let secondStat = number(firstData); 
-        }
-    
-    }
+
     if(firstData > secondData){
         firstScore++;
     }else{
         secondScore++;
     }
     let score = firstScore + " - " + secondScore;
+    let divScore = document.querySelectorAll(".section--results .section__div");
+    const p = document.createElement("p");
+    p.innerText = score;
+    p.classList.add("section__p");
+    divScore.forEach((div) => {
+        div.appendChild(p);
+    })
     console.log(score);
 }
 
@@ -360,7 +432,16 @@ function displayWinner(){
     div.classList.add("section__div--winner");
     const p = document.createElement("p");
     p.classList.add("div__p");
-    p.innerText = "Winner";
+    if(firstScore === secondScore){
+        p.innerText = "Draw";
+        div.style.backgroundColor = "#e94d4d";
+    }else if(firstScore > secondScore){
+        p.innerText = "Winner";
+        div.style.backgroundImage = "url("+`${genres['genre'][`${genreSelected}`][`${artistSelectedAll[0]}`]['image-link']}`+")";
+    }else{
+        p.innerText = "Winner";
+        div.style.backgroundImage = "url("+`${genres['genre'][`${genreSelected}`][`${artistSelectedAll[1]}`]['image-link']}`+")";
+    }
     div.appendChild(p);
     sectionResults.appendChild(div);
 

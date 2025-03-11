@@ -207,6 +207,7 @@ h4 {
     width: 100%;
   }
 }
+
 .section--interactive {
   min-height: 70vh;
   & .section__div--text {
@@ -242,6 +243,7 @@ h4 {
     align-items: center;
     justify-content: center;
     position: relative;
+    margin-bottom: clamp(5rem, 2.447rem + 10.892vw, 12.25rem);
     & .div__div--firstArtist,
     .div__div--secondArtist {
       display: flex;
@@ -268,6 +270,42 @@ h4 {
       font-weight: 700;
       padding: 0;
       text-shadow: 0px 0px 16px black;
+    }
+  }
+  & .div__h2{
+    font-family: $title-font;
+    font-weight: 700;
+  }
+  & .section__div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    & .div__h2{
+      font-size: clamp(1.75rem, 0.694rem + 4.507vw, 4.75rem);
+      margin-bottom: clamp(4.188rem, 2.581rem + 6.854vw, 8.75rem);
+      margin-left: clamp(1.25rem, -0.07rem + 5.634vw, 5rem);
+    }
+    &--albumSold{
+      & .div__h2{
+        display: inline;
+        color: #444444;
+        align-self: flex-end;
+        margin: 0px clamp(1.25rem, -0.07rem + 5.634vw, 5rem) clamp(4.188rem, 2.581rem + 6.854vw, 8.75rem) 0px;
+      }
+      & .div__div--dataVis{
+        height: clamp(3.125rem, 1.805rem + 5.634vw, 6.875rem);
+        display: flex;
+      }
+      & .div__div--firstDataDiv, .div__div--secondDataDiv{
+        height: 100%;
+      }
+    }
+    &--awards{
+      & .div__h2{
+        font-size: 28vw;
+        color: #262626;
+        margin: 0;
+      }
     }
   }
 }
