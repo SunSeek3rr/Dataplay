@@ -4,7 +4,7 @@
             "imagineDragons": {
                 "value": "imagineDragons",
                 "name": "Imagine Dragons",
-                "albumsSell": "74,000,000",
+                "albums-sell": "74,000,000",
                 "streams-total": "34,400,000,000",
                 "certifications": "47",
                 "certifications-split": "(17 gold, 30 platinum)",
@@ -72,7 +72,7 @@
                 "image2x-link": "../assets/images/pfpNirvana@2x.webp"
             },
             "theKillers": {
-                "value": "thekillers",
+                "value": "theKillers",
                 "name": "The Killers",
                 "albums-sell": "30,000,000",
                 "streams-total": "8,732,015,922",

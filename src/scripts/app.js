@@ -123,29 +123,33 @@ function statsAlbumCount(){
     let sectionResults = document.querySelector(".section--results");
     const div = document.createElement("div");
     div.classList.add("section__div--albumCount");
+    const H2 = document.createElement("h2");
+    H2.innerText = "Albums count";
+    H2.classList.add("section__h2");
+    div.appendChild(H2);
     sectionResults.appendChild(div);
-    
     for(let i = 0; i < artistSelectedAll.length; i++){
-
+        
         const divPContainer = document.createElement("div");
         divPContainer.classList.add("div__div--container");
         if(i<1){
             div.appendChild(divPContainer);
         }
-        
-        let divContainer = document.querySelector(".div__div--container");
+
+        let divContainer = document.querySelector(".section__div--albumCount .div__div--container");
         
         const span = document.createElement("span");
         span.innerText = genres["genre"][`${genreSelected}`][`${artistSelectedAll[i]}`].name;
-        span.classList.add("p__span")
+        span.classList.add("p__span");
         
         const p = document.createElement("p");
         p.innerText = " has created " + genres["genre"][`${genreSelected}`][`${artistSelectedAll[i]}`]["album-total"] + " albums";
-        p.classList.add("div__p")
+        p.classList.add("div__p");
         p.insertBefore(span, p.firstChild);
         divContainer.appendChild(p);
-
+        
     }
+    scoreTracker();
     statsAlbumSold();
 }
 
@@ -153,29 +157,34 @@ function statsAlbumSold(){
     let sectionResults = document.querySelector(".section--results");
     const div = document.createElement("div");
     div.classList.add("section__div--albumSold");
+    const H2 = document.createElement("h2");
+    H2.innerText = "Albums sold";
+    H2.classList.add("section__h2");
+    div.appendChild(H2);
     sectionResults.appendChild(div);
     
     for(let i = 0; i < artistSelectedAll.length; i++){
-
+        
         const divPContainer = document.createElement("div");
         divPContainer.classList.add("div__div--container");
         if(i<1){
             div.appendChild(divPContainer);
         }
-        
-        let divContainer = document.querySelector(".div__div--container");
+
+        let divContainer = document.querySelector(".section__div--albumSold .div__div--container");
         
         const span = document.createElement("span");
         span.innerText = genres["genre"][`${genreSelected}`][`${artistSelectedAll[i]}`].name;
-        span.classList.add("p__span")
+        span.classList.add("p__span");
         
         const p = document.createElement("p");
         p.innerText = " has sold " + genres["genre"][`${genreSelected}`][`${artistSelectedAll[i]}`]["albums-sell"] + " albums";
-        p.classList.add("div__p")
+        p.classList.add("div__p");
         p.insertBefore(span, p.firstChild);
         divContainer.appendChild(p);
 
     }
+    scoreTracker();
     statsNumberStreams();
 }
 
@@ -183,21 +192,25 @@ function statsNumberStreams(){
     let sectionResults = document.querySelector(".section--results");
     const div = document.createElement("div");
     div.classList.add("section__div--streamNumber");
+    const H2 = document.createElement("h2");
+    H2.innerText = "Number of streams";
+    H2.classList.add("section__h2");
+    div.appendChild(H2);
     sectionResults.appendChild(div);
-
+    
     for(let i = 0; i < artistSelectedAll.length; i++){
-
+        
         const divPContainer = document.createElement("div");
         divPContainer.classList.add("div__div--container");
         if(i<1){
             div.appendChild(divPContainer);
         }
-        
-        let divContainer = document.querySelector(".div__div--container");
+
+        let divContainer = document.querySelector(".section__div--streamNumber .div__div--container");
         
         const span = document.createElement("span");
         span.innerText = genres["genre"][`${genreSelected}`][`${artistSelectedAll[i]}`].name;
-        span.classList.add("p__span")
+        span.classList.add("p__span");
         
         const p = document.createElement("p");
         p.innerText = " has generated over " + genres["genre"][`${genreSelected}`][`${artistSelectedAll[i]}`]["streams-total"] + " streams since he started";
@@ -206,64 +219,75 @@ function statsNumberStreams(){
         divContainer.appendChild(p);
 
     }
+    scoreTracker();
     statsAwards();
 }
 function statsAwards(){
     let sectionResults = document.querySelector(".section--results");
     const div = document.createElement("div");
     div.classList.add("section__div--awards");
+    const H2 = document.createElement("h2");
+    H2.innerText = "Awards";
+    H2.classList.add("section__h2");
+    div.appendChild(H2);
     sectionResults.appendChild(div);
-
+    
     for(let i = 0; i < artistSelectedAll.length; i++){
-
+        
         const divPContainer = document.createElement("div");
         divPContainer.classList.add("div__div--container");
         if(i<1){
             div.appendChild(divPContainer);
         }
-        
-        let divContainer = document.querySelector(".div__div--container");
+
+        let divContainer = document.querySelector(".section__div--awards .div__div--container");
         
         const span = document.createElement("span");
         span.innerText = genres["genre"][`${genreSelected}`][`${artistSelectedAll[i]}`].name;
-        span.classList.add("p__span")
+        span.classList.add("p__span");
         
         const p = document.createElement("p");
         p.innerText = " has received " + genres["genre"][`${genreSelected}`][`${artistSelectedAll[i]}`]["awards"] + " awards throughout his career";
-        p.classList.add("div__p")
+        p.classList.add("div__p");
         p.insertBefore(span, p.firstChild);
         divContainer.appendChild(p);
 
     }
+    scoreTracker();
     statsCertifications();
 }
 function statsCertifications(){
     let sectionResults = document.querySelector(".section--results");
     const div = document.createElement("div");
     div.classList.add("section__div--certifications");
+    const H2 = document.createElement("h2");
+    H2.innerText = "Certifications";
+    H2.classList.add("section__h2");
+    div.appendChild(H2);
     sectionResults.appendChild(div);
     
     for(let i = 0; i < artistSelectedAll.length; i++){
-
+        
         const divPContainer = document.createElement("div");
         divPContainer.classList.add("div__div--container");
         if(i<1){
             div.appendChild(divPContainer);
         }
-        
-        let divContainer = document.querySelector(".div__div--container");
+
+        let divContainer = document.querySelector(".section__div--certifications .div__div--container");
         
         const span = document.createElement("span");
         span.innerText = genres["genre"][`${genreSelected}`][`${artistSelectedAll[i]}`].name;
-        span.classList.add("p__span")
+        span.classList.add("p__span");
         
         const p = document.createElement("p");
         p.innerText = " has received a total of " + genres["genre"][`${genreSelected}`][`${artistSelectedAll[i]}`]["certifications"] + " certifications " + genres["genre"][`${genreSelected}`][`${artistSelectedAll[i]}`]["certifications-split"];
-        p.classList.add("div__p")
+        p.classList.add("div__p");
         p.insertBefore(span, p.firstChild);
         divContainer.appendChild(p);
 
     }
+    scoreTracker();
     statsTotalTime();
 }
 
@@ -271,21 +295,25 @@ function statsTotalTime(){
     let sectionResults = document.querySelector(".section--results");
     const div = document.createElement("div");
     div.classList.add("section__div--totalTime");
+    const H2 = document.createElement("h2");
+    H2.innerText = "Total music time";
+    H2.classList.add("section__h2");
+    div.appendChild(H2);
     sectionResults.appendChild(div);
     
     for(let i = 0; i < artistSelectedAll.length; i++){
-
+        
         const divPContainer = document.createElement("div");
         divPContainer.classList.add("div__div--container");
         if(i<1){
             div.appendChild(divPContainer);
         }
-        
-        let divContainer = document.querySelector(".div__div--container");
+
+        let divContainer = document.querySelector(".section__div--totalTime .div__div--container");
         
         const span = document.createElement("span");
         span.innerText = genres["genre"][`${genreSelected}`][`${artistSelectedAll[i]}`].name;
-        span.classList.add("p__span")
+        span.classList.add("p__span");
         
         const p = document.createElement("p");
         const pFirstText = document.createTextNode("If you add up every song from ");
@@ -296,32 +324,48 @@ function statsTotalTime(){
         p.appendChild(span);
         p.appendChild(pSecondText);
         p.appendChild(pData);
-        p.appendChild(pThirdText)
-        p.classList.add("div__p")
+        p.appendChild(pThirdText);
+        p.classList.add("div__p");
         divContainer.appendChild(p);
 
     }
-    //displayWinner();
+    scoreTracker();
+    displayWinner();
 }
-/*function displayWinner(){
-    let sectionResults = document.querySelector(".section--results");
-    let firstArtist = document.querySelector(".div__div--firstArtist");
-    let secondArtist = document.querySelector(".div__div--secondArtist");
-    sectionResults.classList.add("visible");
-    
+let firstScore = 0;
+let secondScore = 0;
+function scoreTracker(){
     for(let i = 0; i < artistSelectedAll.length; i++){
-        const H2 = document.createElement("h2");
-        H2.innerText = genres['genre'][`${genreSelected}`][`${artistSelectedAll[i]}`].name;
         if(i<1){
-            firstArtist.appendChild(H2);
-            firstArtist.style.backgroundImage = "url("+`${genres['genre'][`${genreSelected}`][`${artistSelectedAll[i]}`]['image-link']}`+")";
+            let firstStat = number(firstData);
         }else{
-            secondArtist.appendChild(H2);
-            secondArtist.style.backgroundImage = "url("+`${genres['genre'][`${genreSelected}`][`${artistSelectedAll[i]}`]['image-link']}`+")";
+            let secondStat = number(firstData); 
         }
-
+    
     }
-}*/
+    if(firstData > secondData){
+        firstScore++;
+    }else{
+        secondScore++;
+    }
+    let score = firstScore + " - " + secondScore;
+    console.log(score);
+}
+
+// Resize images on mobile, maybe to big to display.
+// SCSS to design infos + reactive dataset graphs
+function displayWinner(){
+    let sectionResults = document.querySelector(".section--results");
+    const div = document.createElement("div");
+    div.classList.add("section__div--winner");
+    const p = document.createElement("p");
+    p.classList.add("div__p");
+    p.innerText = "Winner";
+    div.appendChild(p);
+    sectionResults.appendChild(div);
+
+    //secondArtist.style.backgroundImage = "url("+`${genres['genre'][`${genreSelected}`][`${artistSelectedAll[i]}`]['image-link']}`+")";
+}
 
 window.addEventListener("DOMContentLoaded", ()=>{
     fetchData();
