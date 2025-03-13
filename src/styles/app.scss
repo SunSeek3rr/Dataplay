@@ -285,6 +285,20 @@ h4 {
       margin-bottom: clamp(4.188rem, 2.581rem + 6.854vw, 8.75rem);
       margin-left: clamp(1.25rem, -0.07rem + 5.634vw, 5rem);
     }
+    & .div__div--container{
+      display: flex;
+      flex-direction: column;
+      & .div__p:first-of-type{
+        align-self: flex-start;
+      }
+      & .div__p:last-of-type{
+        align-self: flex-end;
+      }
+    }
+    & .div__p{
+      font-size: clamp(1rem, 0.648rem + 1.502vw, 2rem);
+      max-width: 50%;
+    }
     &--albumSold{
       & .div__h2{
         display: inline;
@@ -302,12 +316,28 @@ h4 {
     }
     &--awards{
       & .div__h2{
-        font-size: 28vw;
+        font-size: 27.8vw;
         color: #262626;
         margin: 0;
       }
     }
+    &--certifications{
+      & .div__h2{
+        display: inline;
+        color: #444444;
+        align-self: flex-end;
+        margin: 0px clamp(1.25rem, -0.07rem + 5.634vw, 5rem) clamp(4.188rem, 2.581rem + 6.854vw, 8.75rem) 0px;
+      }
+    }
   }
+}
+
+.data--winner{
+  color: $winner-text-color;
+}
+.p__span{
+  text-decoration: underline;
+  text-underline-offset: 13%;
 }
 .div__btn {
   width: 100%;

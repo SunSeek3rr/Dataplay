@@ -141,23 +141,9 @@ function statsAlbumCount(){
             firstData = Number(actualData);
         }
         secondData = Number(actualData);
-        if(i<1){
-            if (firstData > secondData){
-                img.setAttribute("src", "assets/images/AlbumCount-disk-winner");
-            }else{
-                img.setAttribute("src", "assets/images/AlbumCount-disk-loser");
-            }
-        }else if(i = 1){
-            if (secondData > firstData){
-                img.setAttribute("src", "assets/images/AlbumCount-disk-winner");
-            }else{
-                img.setAttribute("src", "assets/images/AlbumCount-disk-loser");
-            }
-        }
         const figure = document.createElement("figure");
         figure.classList.add("div__figure");
         divPContainer.appendChild(figure);
-        figure.appendChild(img);
         const span = document.createElement("span");
         span.innerText = genres["genre"][`${genreSelected}`][`${artistSelectedAll[i]}`].name;
         span.classList.add("p__span");
@@ -166,7 +152,23 @@ function statsAlbumCount(){
         p.innerText = " has created " + genres["genre"][`${genreSelected}`][`${artistSelectedAll[i]}`]["album-total"] + " albums";
         p.classList.add("figure__p");
         p.insertBefore(span, p.firstChild);
+        figure.appendChild(img);
         figure.appendChild(p);
+        if(i<1){
+            if (firstData > secondData){
+                img.setAttribute("src", "assets/images/AlbumCount-disk-winner");
+                p.classList.add("data--winner");
+            }else{
+                img.setAttribute("src", "assets/images/AlbumCount-disk-loser");
+            }
+        }else if(i = 1){
+            if (secondData > firstData){
+                img.setAttribute("src", "assets/images/AlbumCount-disk-winner");
+                p.classList.add("data--winner");
+            }else{
+                img.setAttribute("src", "assets/images/AlbumCount-disk-loser");
+            }
+        }
         
         
     }
@@ -229,7 +231,18 @@ function statsAlbumSold(){
         p.classList.add("div__p");
         p.insertBefore(span, p.firstChild);
         divContainer.appendChild(p);
-
+        if(i<1){
+            if (firstData > secondData){
+                p.classList.add("data--winner");
+            }else{
+            }
+        }else if(i = 1){
+            if (secondData > firstData){
+                p.classList.add("data--winner");
+            }else{
+            }
+        }
+        
     }
     scoreTracker();
     statsNumberStreams();
@@ -274,7 +287,17 @@ function statsNumberStreams(){
         p.classList.add("div__p")
         p.insertBefore(span, p.firstChild);
         divContainer.appendChild(p);
-        
+        if(i<1){
+            if (firstData > secondData){
+                pDataVis.classList.add("data--winner");
+                p.classList.add("data--winner");
+            }
+        }else if(i = 1){
+            if (secondData > firstData){
+                pDataVis.classList.add("data--winner");
+                p.classList.add("data--winner");
+            }
+        }
     }
     let firstDataClass = document.querySelector(".div__p--firstDataVis");
     let secondDataClass = document.querySelector(".div__p--secondDataVis");
@@ -321,6 +344,15 @@ function statsAwards(){
         p.classList.add("div__p");
         p.insertBefore(span, p.firstChild);
         divContainer.appendChild(p);
+        if(i<1){
+            if (firstData > secondData){
+                p.classList.add("data--winner");
+            }
+        }else if(i = 1){
+            if (secondData > firstData){
+                p.classList.add("data--winner");
+            }
+        }
 
     }
     scoreTracker();
@@ -356,7 +388,15 @@ function statsCertifications(){
         p.classList.add("div__p");
         p.insertBefore(span, p.firstChild);
         divContainer.appendChild(p);
-
+        if(i<1){
+            if (firstData > secondData){
+                p.classList.add("data--winner");
+            }
+        }else if(i = 1){
+            if (secondData > firstData){
+                p.classList.add("data--winner");
+            }
+        }
     }
     scoreTracker();
     statsTotalTime();
@@ -399,7 +439,15 @@ function statsTotalTime(){
         p.appendChild(pThirdText);
         p.classList.add("div__p");
         divContainer.appendChild(p);
-
+        if(i<1){
+            if (firstData > secondData){
+                p.classList.add("data--winner");
+            }
+        }else if(i = 1){
+            if (secondData > firstData){
+                p.classList.add("data--winner");
+            }
+        }
     }
     scoreTracker();
     displayWinner();
@@ -417,7 +465,7 @@ function scoreTracker(){
     let divScore = document.querySelectorAll(".section--results .section__div");
     const p = document.createElement("p");
     p.innerText = score;
-    p.classList.add("section__p");
+    p.classList.add("div__p", "div__p--score");
     divScore.forEach((div) => {
         div.appendChild(p);
     })
