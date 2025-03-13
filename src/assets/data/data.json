@@ -14,8 +14,13 @@
                 "music-time-total": "893",
                 "album-total": "10",
                 "spotifyLink": "https://open.spotify.com/intl-fr/artist/53XhwfbYqKCa1cC15pYq2q?si=aa20QdYtTFWcL4QZXARQXg",
-                "image-link": "../assets/images/pfpImagine.jpg",
-                "image2x-link": "../assets/images/pfpImagine@2x.webp"
+                "image-link": "../dataplay/assets/images/pfpImagine.webp",
+                "image2x-link": "../dataplay/assets/images/pfpImagine@2x.webp",
+                "image-winner-link": "../dataplay/assets/images/pfpImagine_Win.webp",
+                "image2x-winner-link": "../dataplay/assets/images/pfpImagine_Win@2x.webp",
+                "headerImageSrc": "assets/images/pfpImagine.webp",
+                "headerImageSrcset": "assets/images/pfpImagine@2x.webp",
+                "start-year": "2012"
             },
             "linkinPark": {
                 "value": "linkinPark",
@@ -30,8 +35,13 @@
                 "music-time-total": "1894",
                 "album-total": "22",
                 "spotifyLink": "https://open.spotify.com/intl-fr/artist/6XyY86QOPPrYVGvF9ch6wz?si=_ZxPxof0Rc6cErbJIwbuIQ",
-                "image-link": "../assets/images/pfpLinkin.jpg",
-                "image2x-link": "../assets/images/pfpLinkin@2x.webp"
+                "image-link": "../dataplay/assets/images/pfpLinkin.webp",
+                "image2x-link": "../dataplay/assets/images/pfpLinkin@2x.webp",
+                "image-winner-link": "../dataplay/assets/images/pfpLinkin_Win.webp",
+                "image2x-winner-link": "../dataplay/assets/images/pfpLinkin_Win@2x.webp",
+                "headerImageSrc": "assets/images/pfpLinkin.webp",
+                "headerImageSrcset": "assets/images/pfpLinkin@2x.webp",
+                "start-year": "2000"
             },
             "queen": {
                 "value": "queen",
@@ -46,8 +56,13 @@
                 "music-time-total": "3225",
                 "album-total": "30",
                 "spotifyLink": "https://open.spotify.com/intl-fr/artist/1dfeR4HaWDbWqFHLkxsg1d?si=Y3f8te4lQYyMzHP_PFGz9g",
-                "image-link": "../assets/images/pfpQueen.jpg",
-                "image2x-link": "../assets/images/pfpQueen@2x.webp"
+                "image-link": "../dataplay/assets/images/pfpQueen.webp",
+                "image2x-link": "../dataplay/assets/images/pfpQueen@2x.webp",
+                "image-winner-link": "../dataplay/assets/images/pfpQueen_Win.webp",
+                "image2x-winner-link": "../dataplay/assets/images/pfpQueen_Win@2x.webp",
+                "headerImageSrc": "assets/images/pfpQueen.webp",
+                "headerImageSrcset": "assets/images/pfpQueen@2x.webp",
+                "start-year": "1973"
             },
             "acdc": {
                 "value": "acdc",
@@ -62,8 +77,13 @@
                 "music-time-total": "1089",
                 "album-total": "20",
                 "spotifyLink": "https://open.spotify.com/intl-fr/artist/711MCceyCBcFnzjGY4Q7Un?si=WunFZRNkQlqg-GYZN1BN-Q",
-                "image-link": "../assets/images/pfpACDC.jpg",
-                "image2x-link": "../assets/images/pfpACDC@2x.webp"
+                "image-link": "../dataplay/assets/images/pfpACDC.webp",
+                "image2x-link": "../dataplay/assets/images/pfpACDC@2x.webp",
+                "image-winner-link": "../dataplay/assets/images/pfpACDC_Win.webp",
+                "image2x-winner-link": "../dataplay/assets/images/pfpACDC_Win@2x.webp",
+                "headerImageSrc": "assets/images/pfpACDC.webp",
+                "headerImageSrcset": "assets/images/pfpACDC@2x.webp",
+                "start-year": "1976"
             },
             "nirvana": {
                 "value": "nirvana",
@@ -78,8 +98,13 @@
                 "music-time-total": "1967",
                 "album-total": "17",
                 "spotifyLink": "https://open.spotify.com/intl-fr/artist/6olE6TJLqED3rqDCT0FyPh?si=qV1fuQzeQhqTJpYOjdnDUg",
-                "image-link": "../assets/images/pfpNirvana.jpg",
-                "image2x-link": "../assets/images/pfpNirvana@2x.webp"
+                "image-link": "../dataplay/assets/images/pfpNirvana.webp",
+                "image2x-link": "../dataplay/assets/images/pfpNirvana@2x.webp",
+                "image-winner-link": "../dataplay/assets/images/pfpNirvana_Win.webp",
+                "image2x-winner-link": "../dataplay/assets/images/pfpNirvana_Win@2x.webp",
+                "headerImageSrc": "assets/images/pfpNirvana.webp",
+                "headerImageSrcset": "assets/images/pfpNirvana@2x.webp",
+                "start-year": "1989"
             },
             "theKillers": {
                 "value": "theKillers",
@@ -94,8 +119,13 @@
                 "music-time-total": "677",
                 "album-total": "10",
                 "spotifyLink": "https://open.spotify.com/intl-fr/artist/0C0XlULifJtAgn6ZNCW2eu?si=6AGEc1VLQdSY2aztmkj3XQ",
-                "image-link": "../assets/images/pfpTheKillers.jpg",
-                "image2x-link": "../assets/images/pfpTheKillers@2x.webp"
+                "image-link": "../dataplay/assets/images/pfpTheKillers.webp",
+                "image2x-link": "../dataplay/assets/images/pfpTheKillers@2x.webp",
+                "image-winner-link": "../dataplay/assets/images/pfpTheKillers_Win.webp",
+                "image2x-winner-link": "../dataplay/assets/images/pfpTheKillers_Win@2x.webp",
+                "headerImageSrc": "assets/images/pfpTheKillers.webp",
+                "headerImageSrcset": "assets/images/pfpTheKillers@2x.webp",
+                "start-year": "2004"
             }
         },
         "rapUs": {
@@ -112,8 +142,13 @@
                 "music-time-total": "674",
                 "album-total": "8",
                 "spotifyLink": "https://open.spotify.com/intl-fr/artist/2YZyLoL8N0Wb9xBt1NhZWg?si=xSFwLV71RSK8BvmVWyB3kw",
-                "image-link": "../assets/images/pfpKendrick.webp",
-                "image2x-link": "../assets/images/pfpKendrick@2x.webp"
+                "image-link": "../dataplay/assets/images/pfpKendrick.webp",
+                "image2x-link": "../dataplay/assets/images/pfpKendrick@2x.webp",
+                "image-winner-link": "../dataplay/assets/images/pfpKendrick_Win.webp",
+                "image2x-winner-link": "../dataplay/assets/images/pfpKendrick_Win@2x.webp",
+                "headerImageSrc": "assets/images/pfpKendrick.webp",
+                "headerImageSrcset": "assets/images/pfpKendrick@2x.webp",
+                "start-year": "2010"
             },
             "kanyeWest": {
                 "value": "kanyeWest",
@@ -128,8 +163,13 @@
                 "music-time-total": "1002",
                 "album-total": "15",
                 "spotifyLink": "https://open.spotify.com/intl-fr/artist/5K4W6rqBFWDnAN6FQUkS6x?si=JcdyP-LtTHybssdju59ZaA",
-                "image-link": "../assets/images/pfpKanye.jpg",
-                "image2x-link": "../assets/images/pfpKanye@2x.webp"
+                "image-link": "../dataplay/assets/images/pfpKanye.webp",
+                "image2x-link": "../dataplay/assets/images/pfpKanye@2x.webp",
+                "image-winner-link": "../dataplay/assets/images/pfpKanye_Win.webp",
+                "image2x-winner-link": "../dataplay/assets/images/pfpKanye_Win@2x.webp",
+                "headerImageSrc": "assets/images/pfpKanye.webp",
+                "headerImageSrcset": "assets/images/pfpKanye@2x.webp",
+                "start-year": "2004"
             },
             "drake": {
                 "value": "drake",
@@ -144,8 +184,13 @@
                 "music-time-total": "1307",
                 "album-total": "18",
                 "spotifyLink": "https://open.spotify.com/intl-fr/artist/3TVXtAsR1Inumwj472S9r4?si=Qw7O7r-AR-Kyt5vZHiKndg",
-                "image-link": "../assets/images/pfpDrake.webp",
-                "image2x-link": "../assets/images/pfpDrake@2x.webp"
+                "image-link": "../dataplay/assets/images/pfpDrake.webp",
+                "image2x-link": "../dataplay/assets/images/pfpDrake@2x.webp",
+                "image-winner-link": "../dataplay/assets/images/pfpDrake_Win.webp",
+                "image2x-winner-link": "../dataplay/assets/images/pfpDrake_Win@2x.webp",
+                "headerImageSrc": "assets/images/pfpDrake.webp",
+                "headerImageSrcset": "assets/images/pfpDrake@2x.webp",
+                "start-year": "2009"
             },
             "tylerTheCreator": {
                 "value": "tylerTheCreator",
@@ -160,8 +205,13 @@
                 "music-time-total": "784",
                 "album-total": "11",
                 "spotifyLink": "https://open.spotify.com/intl-fr/artist/4V8LLVI7PbaPR0K2TGSxFF?si=VBqYVBL5QWW4uhps5dptDw",
-                "image-link": "../assets/images/pfpTyler.webp",
-                "image2x-link": "../assets/images/pfpTyler@2x.webp"
+                "image-link": "../dataplay/assets/images/pfpTyler.webp",
+                "image2x-link": "../dataplay/assets/images/pfpTyler@2x.webp",
+                "image-winner-link": "../dataplay/assets/images/pfpTyler_Win.webp",
+                "image2x-winner-link": "../dataplay/assets/images/pfpTyler_Win@2x.webp",
+                "headerImageSrc": "assets/images/pfpTyler.webp",
+                "headerImageSrcset": "assets/images/pfpTyler@2x.webp",
+                "start-year": "2011"
             },
             "eminem": {
                 "value": "eminem",
@@ -176,8 +226,13 @@
                 "music-time-total": "1859",
                 "album-total": "12",
                 "spotifyLink": "https://open.spotify.com/intl-fr/artist/7dGJo4pcD2V6oG8kP0tJRR?si=j_Uuz8t-QpiZgoQ0ziEBhA",
-                "image-link": "../assets/images/pfpEminem.jpg",
-                "image2x-link": "../assets/images/pfpEminem@2x.webp"
+                "image-link": "../dataplay/assets/images/pfpEminem.webp",
+                "image2x-link": "../dataplay/assets/images/pfpEminem@2x.webp",
+                "image-winner-link": "../dataplay/assets/images/pfpEminem_Win.webp",
+                "image2x-winner-link": "../dataplay/assets/images/pfpEminem_Win@2x.webp",
+                "headerImageSrc": "assets/images/pfpEminem.webp",
+                "headerImageSrcset": "assets/images/pfpEminem@2x.webp",
+                "start-year": "1999"
             },
             "travisScott": {
                 "value": "travisScott",
@@ -192,8 +247,13 @@
                 "music-time-total": "372",
                 "album-total": "7",
                 "spotifyLink": "https://open.spotify.com/intl-fr/artist/0Y5tJX1MQlPlqiwlOH1tJY?si=VSZiSW0jShygJ1ylt8wzCA",
-                "image-link": "../assets/images/pfpTravis.jpg",
-                "image2x-link": "../assets/images/pfpTravis@2x.webp"
+                "image-link": "../dataplay/assets/images/pfpTravis.webp",
+                "image2x-link": "../dataplay/assets/images/pfpTravis@2x.webp",
+                "image-winner-link": "../dataplay/assets/images/pfpTravis_Win.webp",
+                "image2x-winner-link": "../dataplay/assets/images/pfpTravis_Win@2x.webp",
+                "headerImageSrc": "assets/images/pfpTravis.webp",
+                "headerImageSrcset": "assets/images/pfpTravis@2x.webp",
+                "start-year": "2014"
             }
         }
     }
