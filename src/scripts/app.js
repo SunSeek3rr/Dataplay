@@ -38,8 +38,6 @@ btnRapUS.addEventListener("click", function(){
         .then(function(data){
             JSON.stringify(data);
             genres = data;
-            console.log("data fetched");
-            //afficher(genres);
         })
         .catch((error)=>{
             console.log("impossible de charger les données");
@@ -54,8 +52,6 @@ function generateArtistsButtons(){
         artistBtn.setAttribute("value", genres['genre'][`${genreSelected}`][x].value);
         artistBtn.innerText = genres['genre'][`${genreSelected}`][x].name;
         artistBtn.classList.add("div__btn", "div__btn--artist", "artist");
-        //artistBtn.classList.add("div__btn--artist");
-        //artistBtn.classList.add("artist");
         artistContainer.appendChild(artistBtn);
     }
     artistContainer.scrollIntoView({behavior: 'smooth'});
@@ -65,7 +61,6 @@ function generateArtistsButtons(){
 let artistSelectedAll = [];
 function SelectCharacter(){
     artistSelectedAll = [];
-    console.log(artistSelectedAll);
     artistContainer.classList.remove("hidden");
     let chooseArtistBtn = document.querySelectorAll(".div__btn--artist");
     
@@ -78,7 +73,6 @@ function SelectCharacter(){
                     button.disabled = true;
 
                     if(artistSelectedAll.length === 2){
-                        console.log("values in", artistSelectedAll);
                         chooseArtistBtn.forEach(btn =>{
                             btn.disabled = true;
                         });
@@ -103,7 +97,7 @@ function displayVersus(){
     divVersus.appendChild(secondArtistDiv);
     sectionResults.appendChild(divVersus);
     sectionResults.classList.add("visible");
-    sectionResults.scrollIntoView({behavior: 'smooth'});
+    divVersus.scrollIntoView({behavior: 'smooth'});
     
     for(let i = 0; i < artistSelectedAll.length; i++){
         let firstArtist = document.querySelector(".div__div--firstArtist");
@@ -502,7 +496,10 @@ function scoreTracker(){
 
     if(firstData > secondData){
         firstScore++;
+    }else if(secondData > firstData){
+        secondScore++;
     }else{
+        firstScore++;
         secondScore++;
     }
     let score = firstScore + "-" + secondScore;
@@ -549,8 +546,7 @@ function displayWinner(){
     div.appendChild(p);
     div.appendChild(pName);
     sectionResults.appendChild(div);
-    let btnRestart = document.querySelector(".main__btn--restart");
-    btnRestart.classList.remove("hidden");
+ 
     let sectionDiv = document.querySelectorAll('.section__div');
     let sectionDivText = document.querySelectorAll('.section__div--text');
     let observer = new IntersectionObserver((entries)=>{
@@ -566,19 +562,19 @@ function displayWinner(){
     observer.observe(element);
     });
     sectionDivText.forEach(function (element) {
-        console.log("ouais");
         observer.observe(element);
-        });
+    });
+    let btnRestart = document.querySelector(".main__btn--restart");
+    btnRestart.style.display = "block";
 }
 
+
 let restartBtn = document.querySelector(".main__btn--restart");
-if(restartBtn){
-    console.log(restartBtn);
-    restartBtn.addEventListener("click", ()=>{
-        restartBtn.classList.add("hidden");
-        restart();
-    });
-}
+restartBtn.addEventListener("click", ()=>{
+    restart();
+});
+
+
 function restart(){
     let sectionResults = document.querySelector(".section--results");
     sectionResults.classList.remove("visible");
@@ -589,28 +585,11 @@ function restart(){
     chooseGenre.classList.remove("hidden");
     SelectCharacter();
     let btnRestart = document.querySelector(".main__btn--restart");
-    btnRestart.classList.add("hidden");
+    btnRestart.style.display = "none";
     firstScore = 0;
     secondScore = 0;
 }
-/*function generateArtistsButtons(){
-    
-    artistContainer.innerHTML = "";
-    for(var x in genres['genre'][`${genreSelected}`]){
-        let artistBtn = document.createElement("button");
-        artistBtn.setAttribute("data-text", genres['genre'][`${genreSelected}`][x].name);
-        artistBtn.setAttribute("value", genres['genre'][`${genreSelected}`][x].value);
-        artistBtn.innerText = genres['genre'][`${genreSelected}`][x].name;
-        artistBtn.classList.add("div__btn", "div__btn--artist", "artist");
-        //artistBtn.classList.add("div__btn--artist");
-        //artistBtn.classList.add("artist");
-        artistContainer.appendChild(artistBtn);
-    }
-    selection = true;
-    console.log(selection);
-    SelectCharacter();
-}*/
-//console.log(genres['genre'].rock);
+
 function changeHeaderImage(){
     let rockArtists = [];
     let rapUsArtists = [];
@@ -647,7 +626,6 @@ let sectionDivText = document.querySelectorAll('.section__div--text');
     threshold: 0.1
     });
     sectionDivText.forEach(function (element) {
-        console.log("ouais");
         observer2.observe(element);
         });
 

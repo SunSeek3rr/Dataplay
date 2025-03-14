@@ -33,16 +33,7 @@ body {
 h1,h2,h3,h4 {
   text-transform: uppercase;
 }
-/*
-.header{
-    display: flex;
-    align-items: center;
-    padding: 0px 0px 0px 20px;
-    width: fit-content;
-    & svg{
-        width: 50px;
-    }
-}*/
+
 .div__p {
   padding-right: clamp(1.25rem, 0.34rem + 3.883vw, 5rem);
   line-height: 140%;
@@ -216,8 +207,7 @@ h1,h2,h3,h4 {
   & .section__div--text {
     margin-bottom: clamp(4.188rem, -0.5rem + 20vw, 17.5rem);
   }
-  & .section__div--chooseArtist,
-  .section__div--results {
+  & .section__div--chooseArtist{
     display: none;
     scroll-margin-top: 200px;
   }
@@ -232,7 +222,6 @@ h1,h2,h3,h4 {
     }
     &.hidden,
     .hidden {
-      //transition: all 0.5s ease;
       animation: hiddenAnimation 0.7s ease-out forwards;
     }
   }
@@ -241,7 +230,6 @@ h1,h2,h3,h4 {
 .section--results {
   display: none;
   width: 100%;
-  scroll-margin-top: 55vh;
   & .section__div--versus {
     width: 100%;
     display: flex;
@@ -249,6 +237,7 @@ h1,h2,h3,h4 {
     justify-content: center;
     position: relative;
     margin-bottom: clamp(5rem, 2.447rem + 10.892vw, 12.25rem);
+    scroll-margin-top: 40vh;
     & .div__div--firstArtist,
     .div__div--secondArtist {
       display: flex;
@@ -267,9 +256,6 @@ h1,h2,h3,h4 {
         text-shadow: 0px 0px 16px black;
       }
     }
-    /*& .div__div--firstArtist{
-            
-        }*/
     & .div__p {
       position: absolute;
       font-family: $title-font;
@@ -383,7 +369,6 @@ h1,h2,h3,h4 {
       }
       & .div__div--data{
         display: flex;
-        //gap: 38px;
         justify-content: space-between;
         & .div__p{
           max-width: 16ch;
@@ -549,6 +534,7 @@ h1,h2,h3,h4 {
   }
 }
 .main__btn--restart{
+  display: none;
   font-size: clamp(1.75rem, 0.892rem + 3.662vw, 4.188rem);
   padding: clamp(0.625rem, 0.317rem + 1.315vw, 1.5rem) clamp(1.75rem, 0.914rem + 3.568vw, 4.125rem);
   width: fit-content;
@@ -581,14 +567,12 @@ h1,h2,h3,h4 {
 }
 
 .hidden {
-  //transition: all 0.5s ease;
   animation: hiddenAnimation 0.7s ease-out forwards;
 }
 .visible {
   display: block;
   opacity: 0;
   animation: visibleAnimation 0.7s ease-out forwards;
-  transition: visible 0.7s ease-out;
 }
 .animate{
   animation: animateBottom 0.3s ease-in-out forwards;
@@ -640,9 +624,11 @@ h1,h2,h3,h4 {
 @keyframes visibleAnimation {
   70% {
     opacity: 0;
+    display: block;
   }
   100% {
     opacity: 1;
+    display: block;
   }
 }
 @keyframes headerImg{
@@ -731,6 +717,7 @@ h1,h2,h3,h4 {
     }
   }
   .section--results{
+    scroll-margin-top: 55vh;
     & .section__div{
       &--albumCount{
         & .div__div--container{
